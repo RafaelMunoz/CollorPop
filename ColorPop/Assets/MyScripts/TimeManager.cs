@@ -43,11 +43,15 @@ public class TimeManager : MonoBehaviour {
 		}else{
 			timerText.text = minutes.ToString() + ":0" + cleanSeconds.ToString();
 		}
-
+		if(cleanSeconds <= 30 && minutes == 0)
+		{
+			timerText.color = Color.yellow;
+		}
 		if(minutes < 0)
 		{
 			minutes = kMinutesTillNewGame;
 			seconds = kSecondsInMinute;
+			timerText.color = Color.white;
 			GenerateNums(40);
 		}
 	}
