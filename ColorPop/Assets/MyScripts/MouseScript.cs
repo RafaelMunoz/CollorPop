@@ -5,9 +5,10 @@ public class MouseScript : MonoBehaviour {
 	
 
 	public Camera mainCamera;
+	public bool ShowCursor = false;
 	// Use this for initialization
 	void Start () {
-		//Cursor.visible = false;
+		Cursor.visible = ShowCursor;
 	}
 	
 	// Update is called once per frame
