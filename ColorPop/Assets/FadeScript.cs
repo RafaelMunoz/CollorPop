@@ -12,7 +12,9 @@ public class FadeScript : MonoBehaviour {
 	void Update () {
 		if(this.gameObject.GetComponent<Renderer>().enabled)
 		{
-			this.gameObject.GetComponent<Material>().color = Color.Lerp(Color.white,Color.clear, Time.deltaTime);
+
+			//this.gameObject.GetComponent<Material>().color = Color.Lerp(Color.white,Color.clear, Time.deltaTime);
 		}
 	}
+	
 }
