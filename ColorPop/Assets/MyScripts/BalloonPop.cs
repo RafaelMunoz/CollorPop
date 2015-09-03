@@ -3,16 +3,10 @@ using System.Collections;
 
 public class BalloonPop : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
+	public GameObject number;
+
+	//public GameObject instantiatedObj;
 	void OnMouseDown()
 	{
 		GameObject splatter1 = GameObject.FindGameObjectWithTag("p" + Random.Range(1, 16));
@@ -21,20 +15,26 @@ public class BalloonPop : MonoBehaviour {
 		GameObject splatter4 = GameObject.FindGameObjectWithTag("p" + Random.Range(1, 16)); 
 
 
-
-
 		splatter1.GetComponent<Renderer>().enabled = true;
 		splatter2.GetComponent<Renderer>().enabled = true;
 		splatter3.GetComponent<Renderer>().enabled = true;
 		splatter4.GetComponent<Renderer>().enabled = true;
 
 
-		Destroy(this.gameObject);
+		SwitchBalloon(false);
 
-
-		//Debug.Log("BALLOON WOULD POP");
 	}
 
-
-
+	private void SwitchBalloon(bool on)
+	{
+		if(!on)
+		{
+			GetComponentInChildren<Renderer>().enabled = false;
+			GetComponent<Collider>().enabled = false;
+		}else
+		{
+			GetComponentInChildren<Renderer>().enabled = true;
+			GetComponent<Collider>().enabled = true;
+		}
+	}
 }

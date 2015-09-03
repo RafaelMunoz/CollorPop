@@ -14,13 +14,8 @@ public class MouseScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Vector3 temp = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
-		//temp.z = 20.0f; // Set this to be the distance you want the object to be placed in front of the camera.
-		//temp.y += 140.0f;
-		//temp.x -= 350.0f;
-		//this.transform.position = Camera.main.ScreenToWorldPoint(temp);
-		//transform.position = Camera.main.ScreenToViewportPoint(temp);
+		//Set the position of the target to the mouss position!
 		this.transform.position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
-		 }
+	 }
 
 }
