@@ -6,6 +6,8 @@ public class MouseScript : MonoBehaviour {
 
 	public Camera mainCamera;
 
+	public GameObject dart;
+
 	public bool showCursor = false;
 	// Use this for initialization
 	void Start () {
@@ -16,6 +18,8 @@ public class MouseScript : MonoBehaviour {
 	void Update () {
 		//Set the position of the target to the mouss position!
 		this.transform.position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
+
+
 	 }
 
 }
