@@ -19,7 +19,11 @@ public class BalloonPop : MonoBehaviour {
 		//GameObject splatter2 = GameObject.FindGameObjectWithTag("p" + Random.Range(1, 16)); 
 		//GameObject splatter3 = GameObject.FindGameObjectWithTag("p" + Random.Range(1, 16)); 
 		//GameObject splatter4 = GameObject.FindGameObjectWithTag("p" + Random.Range(1, 16)); 
+<<<<<<< HEAD
 		GameObject splatter1 = GameObject.FindGameObjectWithTag("p3");
+=======
+		GameObject splatter1 = GameObject.FindGameObjectWithTag("p1");
+>>>>>>> parent of 99218d5... got the do dissapear
 
 		splatter1.GetComponent<Renderer>().enabled = true;
 		//splatter2.GetComponent<Renderer>().enabled = true;
