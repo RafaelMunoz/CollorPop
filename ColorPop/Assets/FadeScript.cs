@@ -12,15 +12,16 @@ public class FadeScript : MonoBehaviour {
 	void Update () {
 		if(this.gameObject.GetComponent<Renderer>().enabled)
 		{
-<<<<<<< HEAD
-
-			//this.gameObject.GetComponent<Material>().color = Color.Lerp(Color.white,Color.clear, Time.deltaTime);
+			StartCoroutine(StartFade());
 		}
 	}
 	
-=======
-			this.gameObject.GetComponent<Material>().color = Color.Lerp(Color.white,Color.clear, Time.deltaTime);
-		}
+	IEnumerator StartFade()
+	{
+		yield return new WaitForSeconds(1);
+		this.gameObject.GetComponent<Renderer>().enabled = false;
+		yield return 0;
 	}
->>>>>>> parent of 99218d5... got the do dissapear
+
+
 }
