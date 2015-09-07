@@ -4,11 +4,11 @@ using UnityEngine.UI;
 
 public class AutoGenerationManager : MonoBehaviour {
 
-	private int firstNumber;
-	private int secondNumber;
-	private int thirdNumber;
-	private int fourthNumber;
-	private int fifthNumber;
+	public int firstNumber;
+	public int secondNumber;
+	public int thirdNumber;
+	public int fourthNumber;
+	public int fifthNumber;
 
 	public Text first;
 	public Text second;

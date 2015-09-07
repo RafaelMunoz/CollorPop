@@ -1,11 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class BalloonPop : MonoBehaviour {
 
-
+	private int i;
 	public GameObject number1;
 
+	private NumberManager numMan;
+
+	void Start(){
+		i = 0;
+		numMan = GameObject.Find ("ScriptHolder").GetComponent<NumberManager> ();
+	}
 	//public GameObject instantiatedObj;
 	void OnMouseDown()
 	{
@@ -21,15 +28,16 @@ public class BalloonPop : MonoBehaviour {
 		splatter4.GetComponent<Renderer>().enabled = true;
 
 
-
-		GameObject Number = Resources.Load("num1", typeof (GameObject)) as GameObject;
-
+		int randomNumber = Random.Range(1,20);
+		GameObject Number = Resources.Load(randomNumber.ToString(), typeof (GameObject)) as GameObject;
+		numMan.numbers.Add (randomNumber);
 		if (Number != null) {
 			Instantiate (Number, new Vector3 (this.transform.position.x, this.transform.position.y, 40), Quaternion.identity);
 		}
 		SwitchBalloon(false);
 
 	}
+	
 
 	private void SwitchBalloon(bool on)
 	{
