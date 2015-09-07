@@ -5,6 +5,8 @@ public class SetGrid : MonoBehaviour {
 
 	public GameObject balloons;
 
+	public GameObject NumberPlaceHolder;
+
 	public Transform refrenceBallon;
 	public int Width = 10;
 	public int Height = 10;
@@ -13,6 +15,8 @@ public class SetGrid : MonoBehaviour {
 	//public int blockWidth; 
 	//http://docs.unity3d.com/Manual/InstantiatingPrefabs.html
 	private GameObject [,] grid = new GameObject[10,10];
+
+	
 	
 	
 	void Awake () 
@@ -29,10 +33,8 @@ public class SetGrid : MonoBehaviour {
 				grid[x,y] = gridPiece;
 			}
 		}
+
+
 	}
-
-
-
-
 
 }

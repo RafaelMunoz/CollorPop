@@ -4,7 +4,7 @@ using System.Collections;
 public class BalloonPop : MonoBehaviour {
 
 
-	public GameObject number;
+	public GameObject number1;
 
 	//public GameObject instantiatedObj;
 	void OnMouseDown()
@@ -21,6 +21,12 @@ public class BalloonPop : MonoBehaviour {
 		splatter4.GetComponent<Renderer>().enabled = true;
 
 
+
+		GameObject Number = Resources.Load("num1", typeof (GameObject)) as GameObject;
+
+		if (Number != null) {
+			Instantiate (Number, new Vector3 (this.transform.position.x, this.transform.position.y, 40), Quaternion.identity);
+		}
 		SwitchBalloon(false);
 
 	}

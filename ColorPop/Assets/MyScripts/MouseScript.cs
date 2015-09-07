@@ -8,10 +8,17 @@ public class MouseScript : MonoBehaviour {
 
 	public GameObject dart;
 
+	public Texture2D cursorImage;
+
+	private Vector2 cursorHotSpot;
+
 	public bool showCursor = false;
 	// Use this for initialization
 	void Start () {
 		Cursor.visible = showCursor;
+		//cursorImage.Resize (200, 200);
+		cursorHotSpot = new Vector2 (cursorImage.width / 2, cursorImage.height / 2);
+		Cursor.SetCursor (cursorImage, cursorHotSpot, CursorMode.Auto);
 	}
 	
 	// Update is called once per frame
