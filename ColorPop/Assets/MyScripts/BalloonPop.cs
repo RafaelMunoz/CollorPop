@@ -28,7 +28,7 @@ public class BalloonPop : MonoBehaviour {
 		splatter4.GetComponent<Renderer>().enabled = true;
 
 
-		int randomNumber = Random.Range(1,20);
+		int randomNumber = Random.Range(1,40);
 		GameObject Number = Resources.Load(randomNumber.ToString(), typeof (GameObject)) as GameObject;
 		numMan.numbers.Add (randomNumber);
 		if (Number != null) {
