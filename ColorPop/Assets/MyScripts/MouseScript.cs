@@ -28,5 +28,9 @@ public class MouseScript : MonoBehaviour {
 
 
 	 }
+	public void HideMouse()
+	{
+		showCursor = false;
+	}
 
 }

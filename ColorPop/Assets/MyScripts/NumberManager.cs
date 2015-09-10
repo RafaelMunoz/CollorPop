@@ -9,12 +9,13 @@ public class NumberManager : MonoBehaviour {
 	private AutoGenerationManager numsToMatch;
 	private bool incrimentScore;
 	public int numbersMatched;
-
 	private bool firstSpot = false;
 	private bool secSpot = false;
 	private bool thirSpot = false;
 	private bool fourSpot = false;
 	private bool fifSpot = false;
+	public bool OutOfDarts;
+	public DartManager dartMan;
 	// Use this for initialization
 	void Start () {
 		numbersMatched = 0;
@@ -30,11 +31,12 @@ public class NumberManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//CheckMatches ();
-		Debug.Log (numbersMatched);
+
+		//Debug.Log (numbersMatched);
 	}
 
 	public void CheckMatches(){
-
+		dartMan.SubtractDart ();
 		if(numbers.Contains(numsToMatch.firstNumber)){
 			numsToMatch.first.color = Color.green;
 			if(!firstSpot)
