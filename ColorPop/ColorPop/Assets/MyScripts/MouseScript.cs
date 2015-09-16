@@ -17,8 +17,8 @@ public class MouseScript : MonoBehaviour {
 	void Start () {
 		Cursor.visible = showCursor;
 		//cursorImage.Resize (200, 200);
-		cursorHotSpot = new Vector2 (cursorImage.width / 2, cursorImage.height / 2);
-		Cursor.SetCursor (cursorImage, cursorHotSpot, CursorMode.Auto);
+		//cursorHotSpot = new Vector2 (cursorImage.width / 2, cursorImage.height / 2);
+		//Cursor.SetCursor (cursorImage, cursorHotSpot, CursorMode.Auto);
 	}
 	
 	// Update is called once per frame

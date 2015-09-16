@@ -26,6 +26,7 @@ public class ChooseGameScript : MonoBehaviour {
 	}
 
 	public DartManager PopScript;
+	public TicketManager TicketManager;
 
 	//Dart Stuff
 	public int amntOfDarts;
@@ -61,6 +62,11 @@ public class ChooseGameScript : MonoBehaviour {
 	public void SetAmountOfDarts()
 	{
 		PopScript.SetDarts (amntOfDarts);
+	}
+	public void SetAmountOfTix()
+	{
+		TicketManager.SetTix(amntOfTix);
+		Debug.Log(TicketManager.GetTix());
 	}
 	//Dart Stuff
 	private void DartStuff()

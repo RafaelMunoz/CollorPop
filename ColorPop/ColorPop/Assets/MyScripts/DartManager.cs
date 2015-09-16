@@ -3,10 +3,12 @@ using System.Collections;
 
 public class DartManager : MonoBehaviour {
 	private int darts;
+
 	public ChooseGameScript chooseGameScript;
 	// Use this for initialization
 	void Start () {
 		darts = 0;
+
 	}
 	public void SetDarts(int amountOfDarts)
 	{
@@ -14,7 +16,7 @@ public class DartManager : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
-		Debug.Log (darts);
+		//Debug.Log (darts);
 	}
 	public void SubtractDart()
 	{

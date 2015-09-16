@@ -20,7 +20,7 @@ public class NumberManager : MonoBehaviour {
 	void Start () {
 		numbersMatched = 0;
 		numsToMatch = GetComponent<AutoGenerationManager> ();
-
+		OutOfDarts = false;
 		firstSpot = false;
 		secSpot = false;
 		thirSpot = false;
@@ -28,15 +28,17 @@ public class NumberManager : MonoBehaviour {
 		fifSpot = false;
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		//CheckMatches ();
-
-		//Debug.Log (numbersMatched);
-	}
 
 	public void CheckMatches(){
-		dartMan.SubtractDart ();
+		if(!OutOfDarts)
+		{
+			if(dartMan.GetDarts() <= 1)
+			{
+				OutOfDarts = true;
+			}else{
+				dartMan.SubtractDart ();
+			}
+		}
 		if(numbers.Contains(numsToMatch.firstNumber)){
 			numsToMatch.first.color = Color.green;
 			if(!firstSpot)

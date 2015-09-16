@@ -31,7 +31,8 @@ public class BalloonPop : MonoBehaviour {
 	//public GameObject instantiatedObj;
 	void OnMouseDown()
 	{
-
+			if(!numMan.OutOfDarts)
+		{
 			source.PlayOneShot (popSound);
 			colors = Random.Range (1, 4);
 			splatter (colors);
@@ -60,6 +61,7 @@ public class BalloonPop : MonoBehaviour {
 			}
 			numMan.CheckMatches ();
 			SwitchBalloon (false);
+		}
 
 	}
 
