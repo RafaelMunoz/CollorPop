@@ -3,7 +3,8 @@ using System.Collections;
 
 public class DartManager : MonoBehaviour {
 	private int darts;
-
+    private int kDarts;
+    public SetGrid redoGrid;
 	public ChooseGameScript chooseGameScript;
 	// Use this for initialization
 	void Start () {
@@ -13,6 +14,7 @@ public class DartManager : MonoBehaviour {
 	public void SetDarts(int amountOfDarts)
 	{
 		darts = amountOfDarts;
+        kDarts = amountOfDarts;
 	}
 	// Update is called once per frame
 	void Update () {
@@ -25,4 +27,9 @@ public class DartManager : MonoBehaviour {
 	public int GetDarts(){
 		return darts;
 	}
+    public void ResetDarts()
+    {
+        redoGrid.BuildGrid();
+        darts = kDarts;
+    }
 }

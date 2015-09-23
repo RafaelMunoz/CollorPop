@@ -15,26 +15,60 @@ public class NumberManager : MonoBehaviour {
 	private bool fourSpot = false;
 	private bool fifSpot = false;
 	public bool OutOfDarts;
+    public bool OutOfTix;
 	public DartManager dartMan;
+    public TicketManager tixMan;
+
+    private int i;
+
+    private int ticketNumber;
+
+    private Text TicOneTxt;
+
+
 	// Use this for initialization
 	void Start () {
 		numbersMatched = 0;
 		numsToMatch = GetComponent<AutoGenerationManager> ();
 		OutOfDarts = false;
+        OutOfTix = false;
 		firstSpot = false;
 		secSpot = false;
 		thirSpot = false;
 		fourSpot = false;
 		fifSpot = false;
+        i = 0;
+
+        ticketNumber = 1;
 	}
 	
+    void Update()
+    {
+        TicOneTxt = GameObject.Find("TextTic" + ticketNumber.ToString()).GetComponent<Text>();
+        
+    }
+
+    public int GetNumbersMatched()
+    {
+        return numbersMatched;
+    }
 
 	public void CheckMatches(){
+        if (ticketNumber >= tixMan.GetInitTix() && dartMan.GetDarts() <= 1)
+        {
+            OutOfTix = true;
+            tixMan.OutOfTicketsLOSE();
+        }
+        TicOneTxt.text += numbers[i];
+        TicOneTxt.text += "-";
+        i++;
 		if(!OutOfDarts)
 		{
 			if(dartMan.GetDarts() <= 1)
 			{
-				OutOfDarts = true;
+                OutOfDarts = true;
+                ticketNumber++;
+                dartMan.ResetDarts();
 			}else{
 				dartMan.SubtractDart ();
 			}
