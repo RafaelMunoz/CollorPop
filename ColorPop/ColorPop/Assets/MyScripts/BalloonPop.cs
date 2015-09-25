@@ -31,45 +31,37 @@ public class BalloonPop : MonoBehaviour {
 	//public GameObject instantiatedObj;
 	void OnMouseDown()
 	{
-        if (!numMan.OutOfTix)
-        {
-            if (!numMan.OutOfDarts)
-            {
-                //source.Play ();
-                colors = Random.Range(1, 4);
-                splatter(colors);
+			if(!numMan.OutOfDarts)
+		{
+			source.PlayOneShot (popSound);
+			colors = Random.Range (1, 4);
+			splatter (colors);
 
-                splatter1.GetComponent<Renderer>().enabled = true;
-                splatter2.GetComponent<Renderer>().enabled = true;
+			splatter1.GetComponent<Renderer> ().enabled = true;
+			splatter2.GetComponent<Renderer> ().enabled = true;
 
-                int randomNumber = Random.Range(1, 40);
-                //This will check to make sure only unique numbers are under balloons!
-                while (numMan.numbers.Contains(randomNumber))
-                {
-                    //keep the numbers in bounds
-                    if (randomNumber < 40)
-                    {
-                        randomNumber++;
-                    }
-                    else
-                    {
-                        randomNumber--;
-                    }
-                    Debug.Log("CHANGED to a: " + randomNumber);
-                }
-                //set the object to the correct number
-                GameObject Number = Resources.Load(randomNumber.ToString(), typeof(GameObject)) as GameObject;
-                //add the number to the linked list
-                numMan.numbers.Add(randomNumber);
-                //when its finally set, draw the number on the screen
-                if (Number != null)
-                {
-                    Instantiate(Number, new Vector3(this.transform.position.x, this.transform.position.y, 40), Quaternion.identity);
-                }
-                numMan.CheckMatches();
-                SwitchBalloon(false);
-            }
-        }
+			int randomNumber = Random.Range (1, 40);
+			//This will check to make sure only unique numbers are under balloons!
+			while (numMan.numbers.Contains(randomNumber)) {
+				//keep the numbers in bounds
+				if (randomNumber < 40) {
+					randomNumber++;
+				} else {
+					randomNumber--;
+				}
+				Debug.Log ("CHANGED to a: " + randomNumber);
+			}
+			//set the object to the correct number
+			GameObject Number = Resources.Load (randomNumber.ToString (), typeof(GameObject)) as GameObject;
+			//add the number to the linked list
+			numMan.numbers.Add (randomNumber);
+			//when its finally set, draw the number on the screen
+			if (Number != null) {
+				Instantiate (Number, new Vector3 (this.transform.position.x, this.transform.position.y, 40), Quaternion.identity);
+			}
+			numMan.CheckMatches ();
+			SwitchBalloon (false);
+		}
 
 	}
 

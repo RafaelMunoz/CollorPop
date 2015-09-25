@@ -8,13 +8,11 @@ public class TimeManager : MonoBehaviour {
 	public AutoGenerationManager GenerateNumbers;
 
 	private const float kSecondsInMinute = 60.0f;
-	public int kMinutesTillNewGame = 0;
+	public int kMinutesTillNewGame = 3;
 	private int minutes;
 	private float seconds;
 
 	public Text timerText;
-
-    public GameObject loseScreen;
 
 	// Use this for initialization
 	void Start () {
@@ -54,8 +52,7 @@ public class TimeManager : MonoBehaviour {
 			minutes = kMinutesTillNewGame;
 			seconds = kSecondsInMinute;
 			timerText.color = Color.white;
-            loseScreen.SetActive(true);
-			//GenerateNums(40);
+			GenerateNums(40);
 		}
 	}
 	void GenerateNums(int highest)
